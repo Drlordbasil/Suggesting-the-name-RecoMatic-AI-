@@ -1,0 +1,15 @@
+The required packages for the given Python program are:
+
+- requests
+- BeautifulSoup
+- transformers
+
+You can create a requirements.txt file with these package requirements by running the following command:
+
+```
+echo "requests==2.26.0" >> requirements.txt
+echo "beautifulsoup4==4.9.3" >> requirements.txt
+echo "transformers==4.11.3" >> requirements.txt
+```
+
+Please note that the versions mentioned are just examples. You can replace them with the appropriate versions based on your project requirements.
