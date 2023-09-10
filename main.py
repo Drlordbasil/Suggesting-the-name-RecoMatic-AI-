@@ -12,15 +12,19 @@ class MarketResearch:
 
     def gather_social_media_data(self):
         self.social_media_data = [
-            {"title": "Social Media Post 1", "content": "Content 1", "sentiment": "positive"},
-            {"title": "Social Media Post 2", "content": "Content 2", "sentiment": "negative"},
-            {"title": "Social Media Post 3", "content": "Content 3", "sentiment": "neutral"},
+            {"title": "Social Media Post 1",
+                "content": "Content 1", "sentiment": "positive"},
+            {"title": "Social Media Post 2",
+                "content": "Content 2", "sentiment": "negative"},
+            {"title": "Social Media Post 3",
+                "content": "Content 3", "sentiment": "neutral"},
         ]
 
     def gather_news_articles_data(self):
         self.news_articles_data = [
             {"title": "News Article 1", "content": "Content 1", "category": "politics"},
-            {"title": "News Article 2", "content": "Content 2", "category": "technology"},
+            {"title": "News Article 2", "content": "Content 2",
+                "category": "technology"},
             {"title": "News Article 3", "content": "Content 3", "category": "sports"},
         ]
 
@@ -75,8 +79,10 @@ class ContentCategorization:
 
     def process_web_pages(self):
         self.categorized_content = [
-            {"title": "Article 1", "description": "Description 1", "category": "technology"},
-            {"title": "Article 2", "description": "Description 2", "category": "finance"},
+            {"title": "Article 1", "description": "Description 1",
+                "category": "technology"},
+            {"title": "Article 2", "description": "Description 2",
+                "category": "finance"},
             {"title": "Article 3", "description": "Description 3", "category": "health"},
         ]
 
@@ -89,9 +95,12 @@ class ContentRanking:
 
     def rank_content(self):
         self.ranked_content = [
-            {"title": "Ranked Article 1", "description": "Description 1", "category": "technology", "rank": 1},
-            {"title": "Ranked Article 2", "description": "Description 2", "category": "finance", "rank": 2},
-            {"title": "Ranked Article 3", "description": "Description 3", "category": "health", "rank": 3},
+            {"title": "Ranked Article 1", "description": "Description 1",
+                "category": "technology", "rank": 1},
+            {"title": "Ranked Article 2", "description": "Description 2",
+                "category": "finance", "rank": 2},
+            {"title": "Ranked Article 3", "description": "Description 3",
+                "category": "health", "rank": 3},
         ]
 
 
@@ -101,7 +110,8 @@ class ContentPresentation:
 
     def present_recommendations(self):
         for content in self.ranked_content:
-            print(f"{content['title']}: {content['description']} (Category: {content['category']})")
+            print(
+                f"{content['title']}: {content['description']} (Category: {content['category']})")
 
 
 class ContinuousLearning:
@@ -130,17 +140,20 @@ def main():
     market_research = MarketResearch(user_preferences)
     market_research.conduct_market_research()
 
-    query_generation = QueryGeneration(market_research.news_articles_data, user_preferences)
+    query_generation = QueryGeneration(
+        market_research.news_articles_data, user_preferences)
     query_generation.generate_query()
 
     content_retrieval = ContentRetrieval(query_generation.query)
     content_retrieval.perform_web_search()
     content_retrieval.filter_content()
 
-    content_categorization = ContentCategorization(content_retrieval.relevant_urls)
+    content_categorization = ContentCategorization(
+        content_retrieval.relevant_urls)
     content_categorization.process_web_pages()
 
-    content_ranking = ContentRanking(content_categorization.categorized_content, [])
+    content_ranking = ContentRanking(
+        content_categorization.categorized_content, [])
     content_ranking.rank_content()
 
     content_presentation = ContentPresentation(content_ranking.ranked_content)
